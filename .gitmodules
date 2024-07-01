@@ -1,0 +1,3 @@
+[submodule "libs/map_storage"]
+	path = libs/map_storage
+	url = https://github.com/Oreoluwa-Se/map_storage.git
