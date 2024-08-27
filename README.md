@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Coarse-Fine SLAM
 
 This project implements a SLAM algorithm designed to provide robust and efficient odometry for both indoor and outdoor environments. The front-end utilizes an invariant Kalman filter for real-time state estimation, while the back-end employs a pose-graph to smooth and refine the estimated trajectory.
@@ -49,14 +48,16 @@ Release Mode:
 ./run.sh Release
 ```
 
-@misc{CoarseFineSlam2024,
+## Citation
+
+if you use this project in your work please citer as follows:
+
+```
+@misc{AlternativePointStorage2024,
   author       = {Oreoluwa Seweje},
-  title        = {Coarse Fine SLAM},
+  title        = {An Alternative PointStorage},
   year         = {2024},
-  url          = {<https://github.com/Oreoluwa-Se/coarse_fine_slam>},
-  note         = {An Adaptable Visual Odometry System},
+  url          = {<https://github.com/Oreoluwa-Se/map_storage}>,
+  note         = {A scalable approach to storing 3D point clouds and a novel method for point-cloud downsampling},
 }
-=======
-# coarse_fine_slam
-An adaptable solution for Lidar only or Lidar Imu slam and visual odometry based on invariant kalman filter front-end.
->>>>>>> ec6c2b2e072a5740d4d8897bc9a8dc6433a10cbe
+```
