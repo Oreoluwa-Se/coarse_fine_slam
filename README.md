@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Coarse-Fine SLAM
 
 This project implements a SLAM algorithm designed to provide robust and efficient odometry for both indoor and outdoor environments. The front-end utilizes an invariant Kalman filter for real-time state estimation, while the back-end employs a pose-graph to smooth and refine the estimated trajectory.
@@ -55,3 +56,7 @@ Release Mode:
   url          = {<https://github.com/Oreoluwa-Se/coarse_fine_slam>},
   note         = {An Adaptable Visual Odometry System},
 }
+=======
+# coarse_fine_slam
+An adaptable solution for Lidar only or Lidar Imu slam and visual odometry based on invariant kalman filter front-end.
+>>>>>>> ec6c2b2e072a5740d4d8897bc9a8dc6433a10cbe
