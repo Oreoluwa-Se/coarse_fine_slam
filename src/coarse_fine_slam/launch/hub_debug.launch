@@ -1,0 +1,18 @@
+<launch>
+    <!-- Load parameters from the config file -->
+    <rosparam file="$(find coarse_fine_slam)/config/params.yaml" command="load"/>
+
+    <!-- Launch the rosbag with a delay-->
+    <arg name="node_start_delay" default="0.0" />
+    <node name="rosbag_play" pkg="rosbag" type="play" args="$(arg bag_file_location)" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@' " required="true"/>
+
+    <!-- Launch the initial node -->
+    <node name="coarse_fine_slam_node" launch-prefix="xterm -e gdb --args" pkg="coarse_fine_slam" type="coarse_fine_slam_node" output="screen"/>
+
+    <!-- Launch rviz -->
+    <arg name="run_rviz" default="false" />
+    <node if="$(arg run_rviz)" name="rviz" pkg="rviz" type="rviz" args="-d $(find coarse_fine_slam)/rviz/lio.rviz" output="screen" />
+
+
+</launch>
+

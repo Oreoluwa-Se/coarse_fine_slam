@@ -1,0 +1,67 @@
+# General information
+bag_file_location: ""
+result_folder: ""
+imu_en: true
+store_state: false
+verbose: false
+gravity: 9.80665
+run_iterations: 500 # 0 means not in use. For testing purposes only. Limits the number of runs [includes subframe runs]
+
+# Ros frame parameters:
+odom_frame: "odom"
+base_frame: ""
+
+# Sensor Information
+Sensor:
+  Lidar:
+    topic: "/rslidar_points"
+    max_queue: 200000
+    orientation: [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+    translation: [0.0, 0.0, 1.97]
+    # preprocessing parameters
+    freq: 10.0 # Lidar frame rate (Hz)
+    max_range: 100 # Maximum detection range (meters)
+    min_range: 1.0 # Minimum detection range (meters)
+    horizontal_fov: 180.0 # Horizontal field of view (degrees)
+    vertical_fov: 30.0 # Vertical field of view (degrees)
+    num_scan_lines: 16 # Number of scanning lines
+    downsample_ratio: 0.5 # Ratio for downsampling the point cloud
+    # noise parameter
+    measurement_noise: 0.1
+
+  Imu:
+    topic: "imu_ned/data"
+    max_queue: 200000
+    orientation: [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+    translation: [-0.03, 0, -0.07]
+    is_ned: true # axis direction - NED or ENU
+
+    # preprocessing
+    freq: 100 # IMU data frequency (Hz)
+    reset: 100 # Frequency to reset IMU data to avoid drift (Hz)
+    satu_threshold: # Saturation thresholds for gyroscopes and accelerometers
+      gyro: 35.0 # Maximum gyroscope reading
+      acc: 3.0 # Maximum accelerometer reading
+    # noise parameter
+    acc_measurement_noise: 0.1
+    gyro_measurement_noise: 0.1
+
+# Tree building parameters
+MapManager:
+  max_points_in_vox: -1 # -1 means we don't limit the number.
+  max_points_in_oct_layer: 100 # Maximum number of points stored in each level for an octant.
+  imbal_factor: 0.7 # Size discrepancy between left and right tree to trigger rebalancing.
+  del_nodes_factor: 0.5 # Maximum ratio between valid and invalid nodes before rebalancing.
+  viewing_distance: -1 # range from ego motion maintained in the map.
+  box_trim: false # Spherical delete/ Box delete around ego motion.
+  tight_budget: true # True: only key_frames inserted into the map. False: insert all frames.
+  visualize_map: false # visualizes all points in the map.
+  visualize_map_every_nth: 10 # full map visualization interval
+  visualize_subframes: true # visualizes a trail of key_points used in icp calculations.
+
+# parameters
+StateEstimation:
+  search_radius: 5.0
+  num_nearest: 5
+  online_calibration: false # should allow for re-calibration in bumpy regions?
+  num_kf_iterations: 20

@@ -1,0 +1,22 @@
+
+Frame_id: 1
+state_dimension: 6
+components:
+  GRAV:
+    values: [0, 0, -9.806649999999999]
+    unit: " (m/s^2)"
+  ORI:
+    values: [0, 0, 0]
+    unit: " (rad)"
+  ORI_BL:
+    values: [0, -0, 0]
+    unit: " (rad)"
+  POS:
+    values: [0, 0, 0]
+    unit: " (m)"
+  POS_BL:
+    values: [0, 0, 1.97]
+    unit: " (m)"
+  VEL:
+    values: [0, 0, 0]
+    unit: " (m/s)"

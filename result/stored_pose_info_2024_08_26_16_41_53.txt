@@ -1,0 +1,210 @@
+Frame_id: 1
+state_dimension: 6
+components:
+  GRAV:
+    values: [0, 0, -9.806649999999999]
+    unit: " (m/s^2)"
+  ORI:
+    values: [0, 0, 0]
+    unit: " (rad)"
+  ORI_BL:
+    values: [0, -0, 0]
+    unit: " (rad)"
+  POS:
+    values: [0, 0, 0]
+    unit: " (m)"
+  POS_BL:
+    values: [0, 0, 1.97]
+    unit: " (m)"
+  VEL:
+    values: [0, 0, 0]
+    unit: " (m/s)"
+Frame_id: 2
+state_dimension: 6
+components:
+  GRAV:
+    values: [0, 0, -9.806649999999999]
+    unit: " (m/s^2)"
+  ORI:
+    values: [-0.0001942278201221814, -3.248090449677662e-05, 0.0001159381342780541]
+    unit: " (rad)"
+  ORI_BL:
+    values: [0, -0, 0]
+    unit: " (rad)"
+  POS:
+    values: [0.005344071717823731, -0.007551017395523408, -1.962425694112277e-05]
+    unit: " (m)"
+  POS_BL:
+    values: [0, 0, 1.97]
+    unit: " (m)"
+  VEL:
+    values: [0.0004988137099556841, -0.0005596685669079383, -1.967457866227462e-06]
+    unit: " (m/s)"
+Frame_id: 3
+state_dimension: 6
+components:
+  GRAV:
+    values: [0, 0, -9.806649999999999]
+    unit: " (m/s^2)"
+  ORI:
+    values: [-0.0001149086148838001, -1.234770781877422e-05, 0.0001564725573769246]
+    unit: " (rad)"
+  ORI_BL:
+    values: [0, -0, 0]
+    unit: " (rad)"
+  POS:
+    values: [0.006872753345188247, -0.009004965722819148, 0.0005246770661768401]
+    unit: " (m)"
+  POS_BL:
+    values: [0, 0, 1.97]
+    unit: " (m)"
+  VEL:
+    values: [0.004341086754322998, -0.003336885583125623, 0.006098048811553881]
+    unit: " (m/s)"
+Frame_id: 4
+state_dimension: 6
+components:
+  GRAV:
+    values: [0, 0, -9.806649999999999]
+    unit: " (m/s^2)"
+  ORI:
+    values: [-0.0001175629677351885, -6.982082112743895e-06, 0.0001441829054659152]
+    unit: " (rad)"
+  ORI_BL:
+    values: [0, -0, 0]
+    unit: " (rad)"
+  POS:
+    values: [0.001855084179497203, -0.006627049948561105, 0.0005393539705860218]
+    unit: " (m)"
+  POS_BL:
+    values: [0, 0, 1.97]
+    unit: " (m)"
+  VEL:
+    values: [-0.02311552187407379, 0.01023826423781547, 0.002197913663363583]
+    unit: " (m/s)"
+Frame_id: 5
+state_dimension: 6
+components:
+  GRAV:
+    values: [0, 0, -9.806649999999999]
+    unit: " (m/s^2)"
+  ORI:
+    values: [-9.133890880045768e-05, -7.172363454584935e-06, 0.00012339051426865]
+    unit: " (rad)"
+  ORI_BL:
+    values: [0, -0, 0]
+    unit: " (rad)"
+  POS:
+    values: [0.002035263272890507, -0.005034317222265233, 0.0006690983702454665]
+    unit: " (m)"
+  POS_BL:
+    values: [0, 0, 1.97]
+    unit: " (m)"
+  VEL:
+    values: [-0.01147389212748026, 0.01225419480669354, 0.002843512182857107]
+    unit: " (m/s)"
+Frame_id: 6
+state_dimension: 6
+components:
+  GRAV:
+    values: [0, 0, -9.806649999999999]
+    unit: " (m/s^2)"
+  ORI:
+    values: [-7.442302039877653e-05, -5.453301201225464e-06, 0.0001000592793138613]
+    unit: " (rad)"
+  ORI_BL:
+    values: [0, -0, 0]
+    unit: " (rad)"
+  POS:
+    values: [0.003962063858256251, -0.002286666701349192, 0.0007677273246595995]
+    unit: " (m)"
+  POS_BL:
+    values: [0, 0, 1.97]
+    unit: " (m)"
+  VEL:
+    values: [2.558005363844339e-05, 0.01717318233679325, 0.002657114524232918]
+    unit: " (m/s)"
+Frame_id: 7
+state_dimension: 6
+components:
+  GRAV:
+    values: [0, 0, -9.806649999999999]
+    unit: " (m/s^2)"
+  ORI:
+    values: [-7.442302039877653e-05, -5.453301201225464e-06, 0.0001000592793138613]
+    unit: " (rad)"
+  ORI_BL:
+    values: [0, -0, 0]
+    unit: " (rad)"
+  POS:
+    values: [0.004240222263235956, -0.001060837652775627, 0.0004356832500078383]
+    unit: " (m)"
+  POS_BL:
+    values: [0, 0, 1.97]
+    unit: " (m)"
+  VEL:
+    values: [0.0009062201999467192, 0.01572951719939732, 0.001238524842949512]
+    unit: " (m/s)"
+Frame_id: 8
+state_dimension: 6
+components:
+  GRAV:
+    values: [0, 0, -9.806649999999999]
+    unit: " (m/s^2)"
+  ORI:
+    values: [-7.268773107536242e-05, -1.048996060034589e-06, 8.581744509880172e-05]
+    unit: " (rad)"
+  ORI_BL:
+    values: [0, -0, 0]
+    unit: " (rad)"
+  POS:
+    values: [0.003342873591056846, 0.001165082696155208, 0.0007893653879750422]
+    unit: " (m)"
+  POS_BL:
+    values: [0, 0, 1.97]
+    unit: " (m)"
+  VEL:
+    values: [-0.001261064393274082, 0.0171503766111818, 0.001697384376560315]
+    unit: " (m/s)"
+Frame_id: 9
+state_dimension: 6
+components:
+  GRAV:
+    values: [0, 0, -9.806649999999999]
+    unit: " (m/s^2)"
+  ORI:
+    values: [-7.268773107536242e-05, -1.048996060034589e-06, 8.581744509880172e-05]
+    unit: " (rad)"
+  ORI_BL:
+    values: [0, -0, 0]
+    unit: " (rad)"
+  POS:
+    values: [0.003612140139045493, 0.001252144417890334, 0.000820939613210465]
+    unit: " (m)"
+  POS_BL:
+    values: [0, 0, 1.97]
+    unit: " (m)"
+  VEL:
+    values: [-0.0003387050405387011, 0.01369215144398649, 0.001503141740715555]
+    unit: " (m/s)"
+Frame_id: 10
+state_dimension: 6
+components:
+  GRAV:
+    values: [0, 0, -9.806649999999999]
+    unit: " (m/s^2)"
+  ORI:
+    values: [-7.268773107536242e-05, -1.048996060034589e-06, 8.581744509880172e-05]
+    unit: " (rad)"
+  ORI_BL:
+    values: [0, -0, 0]
+    unit: " (rad)"
+  POS:
+    values: [0.003501457195574318, 0.001749892990001992, 0.0004682756134130885]
+    unit: " (m)"
+  POS_BL:
+    values: [0, 0, 1.97]
+    unit: " (m)"
+  VEL:
+    values: [-0.000398363978991699, 0.01206234818653849, 0.000715094426546185]
+    unit: " (m/s)"
