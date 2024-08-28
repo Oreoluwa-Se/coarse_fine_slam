@@ -55,7 +55,8 @@ private:
 
     int queue_size{1};
 
-    std::deque<Eigen::Matrix<T, 3, 1>> frames; // handles subframe visualizer
+    std::deque<Eigen::Matrix<T, 3, 1>> frames;
+    // We basically store a track of subframes and visualize that
     std::deque<size_t> frame_sizes;
 
     /* .....................  Other attributes ..................... */

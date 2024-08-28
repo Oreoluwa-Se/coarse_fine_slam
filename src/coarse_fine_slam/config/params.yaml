@@ -1,6 +1,6 @@
 # General information
-bag_file_location: ""
-result_folder: ""
+bag_file_location: "/mnt/c/wslShared/robotics/lidar/github/coarse_fine_slam/bag/rad_test_1.bag"
+result_folder: "/mnt/c/wslShared/robotics/lidar/github/coarse_fine_slam/result"
 imu_en: true
 store_state: false
 verbose: false
@@ -54,14 +54,14 @@ MapManager:
   del_nodes_factor: 0.5 # Maximum ratio between valid and invalid nodes before rebalancing.
   viewing_distance: -1 # range from ego motion maintained in the map.
   box_trim: false # Spherical delete/ Box delete around ego motion.
-  tight_budget: true # True: only key_frames inserted into the map. False: insert all frames.
+  tight_budget: false # True: only key_frames inserted into the map. False: insert all frames.
   visualize_map: false # visualizes all points in the map.
   visualize_map_every_nth: 10 # full map visualization interval
-  visualize_subframes: true # visualizes a trail of key_points used in icp calculations.
+  visualize_subframes: false # visualizes a trail of key_points used in icp calculations.
 
 # parameters
 StateEstimation:
   search_radius: 5.0
   num_nearest: 5
-  online_calibration: false # should allow for re-calibration in bumpy regions?
-  num_kf_iterations: 20
+  online_calibration: true # should allow for re-calibration in bumpy regions?
+  num_kf_iterations: 5

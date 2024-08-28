@@ -110,6 +110,12 @@ void CFLIO<T>::run_imu(Frame::BasePtr<T> &frame)
 
     auto ptr = Frame::Imu<T>::cast(frame);
     kf_interface->imu_run(ptr->acc, ptr->gyro);
+
+    if (params<T>.verbose)
+    {
+        std::cout << "\nMeasured Acc: " << Point3d<T>::eig_to_string(ptr->acc) << std::endl;
+        std::cout << "Measured Gyro: " << Point3d<T>::eig_to_string(ptr->gyro) << std::endl;
+    }
 }
 
 template <typename T>

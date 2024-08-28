@@ -1,29 +1,33 @@
 # Coarse-Fine SLAM
 
-This project implements a SLAM algorithm designed to provide robust and efficient odometry for both indoor and outdoor environments. The front-end utilizes an invariant Kalman filter for real-time state estimation, while the back-end employs a pose-graph to smooth and refine the estimated trajectory.
+Coarse-Fine SLAM is a robust and efficient SLAM algorithm designed for both indoor and outdoor environments. The algorithm combines an invariant Kalman filter for real-time state estimation in the front-end with a pose-graph in the back-end for trajectory smoothing and refinement.
 
-## Point Storage
+## Overview
 
-The point storage system is based on the [map_storage](https://github.com/Oreoluwa-Se/map_storage) library, which utilizes shallow trees for efficient insertion, deletion, and searching. This approach offers performance comparable to, or better than, incremental kd-trees. Detailed information and benchmarks can be found in the repository.
+### Point Storage
 
-## LiDAR Algorithm
+The point storage system leverages the [map_storage](https://github.com/Oreoluwa-Se/map_storage) library, which implements shallow trees for efficient operations like insertion, deletion, and searching. This system offers performance comparable to, or better than, incremental kd-trees. Detailed benchmarks and further information are available in the repository.
 
-The LiDAR processing algorithm is inspired by the paper ["An Incremental Right-Invariant Kalman Filter for LiDAR/Camera/IMU Odometry"](https://arxiv.org/pdf/2402.05003), which introduces a novel method for fusing LiDAR, camera, and IMU data for odometry. Our implementation extends these ideas, combining them with techniques from the Fast-LIO2 paper to optimize for various scenarios. Key features include:
+### LiDAR Processing Algorithm
 
-- **Coarse-to-Fine ICP:** Implements a hierarchical approach to Iterative Closest Point (ICP) to speed up convergence.
-- **Double Downsampling:** Utilizes a double downsampling strategy from the Kiss-ICP paper to reduce computational load.
-- **Adaptive Radius:** Adjusts the search radius dynamically based on a window of past overlaps, smoothing out fluctuations.
-- **Outlier Rejection:** Incorporates robust techniques to estimate measurement weights and filter out unreliable points.
-- **Averaged Process Covariance:** Smooths out the process covariance (Q-matrix) over time using a sliding window, reducing the impact of uncertain measurements.
+Our LiDAR processing algorithm extends ideas from several state-of-the-art papers, resulting in a powerful and flexible system for SLAM:
 
-While the Kalman filter component of the algorithm is complete, ongoing work includes:
+- **Coarse-to-Fine ICP:** A hierarchical approach to Iterative Closest Point (ICP) that accelerates convergence.
+- **Double Downsampling:** Implements a double downsampling strategy inspired by the [Kiss-ICP](https://arxiv.org/pdf/2209.15397) paper, reducing computational load.
+- **Adaptive Radius:** Dynamically adjusts the search radius based on a window of past overlaps to smooth out fluctuations.
+- **Outlier Rejection:** Uses robust techniques to estimate measurement weights and filter out points with uncertain neighbourhood information.
+- **Averaged Process Covariance:** Smooths the process covariance (Q-matrix) over time using a sliding window, Allowing for more stable noise adjustment.
+- **IMU Prediction:** Following insights from the [Point-LIO](https://onlinelibrary.wiley.com/doi/epdf/10.1002/aisy.202200459) paper, IMU readings are predicted as part of the state, allowing for intrinsic noise handling.
+- **Online Calibration:** [OPTIONAL] The algorithm is designed to be adaptable, optionally accounting for disruptions to relative sensor locations. Eg. Bumpy environments e.t.c
 
-- **Pose-Graph Backend:** Implementing pose-graph optimization for key-frame-based smoothing.
-- **Loop Closure:** Developing a loop closure algorithm to correct drift over long trajectories.
+### Ongoing Work
+
+- **Pose-Graph Backend:** Implementing key-frame-based pose-graph optimization for smoother trajectories.
+- **Loop Closure:** Developing a loop closure algorithm to correct drift when recognizing previously visited locations.
 
 ## Dependencies
 
-This project has been tested on Ubuntu 18.04 and 20.04. The following libraries are required:
+This project has been tested on Ubuntu 18.04 and 20.04. The following dependencies are required:
 
 1. C++14 or higher
 2. Eigen
@@ -32,20 +36,36 @@ This project has been tested on Ubuntu 18.04 and 20.04. The following libraries 
 5. Sophus
 6. [map_storage](https://github.com/Oreoluwa-Se/map_storage) (place in the `libs` folder)
 
-## Compilation and Running the Program
+Dependencies 2-5 will be installed via CMake if not already installed. The `run.sh` file would install required dependencies.
 
-Parameters can be configured in the config/params.yaml file
-Debug Mode:
+## Compilation and Execution
 
-```sh
-./run.sh Debug
+### Configuration
 
-```
+Parameters can be configured in the `config/params.yaml` file.
 
-Release Mode:
+### Script Inputs
 
-```sh
-./run.sh Release
+The script requires three inputs:
+
+1. **BUILD_TYPE**: Specifies the type of build.
+    - `Debug`: For debugging.
+    - `Release`: For optimized performance.
+    - `RelWithDebInfo`: A mix of Release and Debug.
+
+2. **USE_RVIZ**: Determines whether RViz, the 3D visualization tool, should be launched after building.
+    - `true`: Launch RViz.
+    - `false`: Do not launch RViz.
+
+3. **BAG_LOCATION**: The full path to the ROS `.bag` file containing the data.
+
+### Running the Script
+
+To execute the script, use the following command:
+
+```bash
+chmod +x run.sh
+./run.sh BUILD_TYPE USE_RVIZ BAG_LOCATION
 ```
 
 ## Citation
@@ -53,11 +73,11 @@ Release Mode:
 if you use this project in your work please citer as follows:
 
 ```
-@misc{AlternativePointStorage2024,
+@misc{CoarseFineSlam,
   author       = {Oreoluwa Seweje},
-  title        = {An Alternative PointStorage},
+  title        = {Merging Ideas for Lidar-Imu Odometry},
   year         = {2024},
-  url          = {<https://github.com/Oreoluwa-Se/map_storage}>,
-  note         = {A scalable approach to storing 3D point clouds and a novel method for point-cloud downsampling},
+  url          = {<https://github.com/Oreoluwa-Se/coarse_fine_slam}>,
+  note         = {Adaptable Slam Algorithm. Merging Ideas from Existing Papers.},
 }
 ```

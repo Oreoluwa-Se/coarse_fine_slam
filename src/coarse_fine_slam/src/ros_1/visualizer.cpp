@@ -3,7 +3,7 @@
 
 namespace
 {
-    constexpr size_t online_sub_frame_trail = 100;
+    constexpr size_t online_sub_frame_trail = 50;
 }
 
 template <typename T>
@@ -113,6 +113,8 @@ void Visualizer<T>::publish_cloud(EndofCycleResults<T> &data, const ros::Time &s
         if (frame_sizes.size() > online_sub_frame_trail)
         {
             size_t size_to_rem = frame_sizes.front();
+            frame_sizes.pop_front();
+
             for (size_t idx = 0; idx < size_to_rem; ++idx)
                 frames.pop_front();
         }
