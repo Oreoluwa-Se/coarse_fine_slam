@@ -1,6 +1,5 @@
 # General information
-bag_file_location: "/mnt/c/wslShared/robotics/lidar/github/coarse_fine_slam/bag/rad_test_1.bag"
-result_folder: "/mnt/c/wslShared/robotics/lidar/github/coarse_fine_slam/result"
+result_folder: ""
 imu_en: true
 store_state: false
 verbose: false
